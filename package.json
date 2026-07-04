@@ -1,0 +1,28 @@
+{
+  "name": "craftdriver-perf",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Competitive benchmark suite: craftdriver vs selenium-webdriver vs webdriverio vs playwright vs kendo-e2e",
+  "type": "module",
+  "workspaces": [
+    "suites/*"
+  ],
+  "scripts": {
+    "serve": "http-server ./fixtures -a 127.0.0.1 -p 8081 -c-1 --cors --silent",
+    "bench:craftdriver": "npm run bench --workspace=suites/craftdriver",
+    "bench:craftdriver:optimized": "npm run bench:optimized --workspace=suites/craftdriver",
+    "bench:craftdriver:zero-config": "npm run bench:zero-config --workspace=suites/craftdriver",
+    "bench:selenium": "npm run bench --workspace=suites/selenium",
+    "bench:wdio": "npm run bench --workspace=suites/wdio",
+    "bench:playwright": "npm run bench --workspace=suites/playwright",
+    "bench:kendo-e2e": "npm run bench --workspace=suites/kendo-e2e",
+    "bench:all": "npm run bench:craftdriver && npm run bench:craftdriver:optimized && npm run bench:craftdriver:zero-config && npm run bench:selenium && npm run bench:wdio && npm run bench:playwright && npm run bench:kendo-e2e",
+    "bench:fresh": "bash scripts/run-all-benchmarks.sh",
+    "report": "node harness/report.ts",
+    "summary": "node scripts/generate-summary.mjs"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.7.0"
+  }
+}

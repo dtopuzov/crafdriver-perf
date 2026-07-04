@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Delayed Reveal (perf fixture)</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 20px; }
+    button { padding: 8px 14px; border: 1px solid #ccc; border-radius: 6px; background: #f5f5f5; cursor: pointer; }
+    #revealed { display: none; margin-top: 16px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Delayed Reveal</h1>
+  <button id="reveal-btn">Reveal</button>
+  <div id="revealed">Revealed!</div>
+  <script>
+    document.getElementById('reveal-btn').addEventListener('click', () => {
+      setTimeout(() => {
+        document.getElementById('revealed').style.display = 'block';
+      }, 20);
+    });
+  </script>
+</body>
+</html>

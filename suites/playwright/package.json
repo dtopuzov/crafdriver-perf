@@ -1,0 +1,15 @@
+{
+  "name": "perf-suite-playwright",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "bench": "vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "playwright": "^1.61.1"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
+  }
+}

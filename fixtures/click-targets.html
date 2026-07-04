@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Click Targets (perf fixture)</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 20px; }
+    button { padding: 8px 14px; margin: 4px; border: 1px solid #ccc; border-radius: 6px; background: #f5f5f5; cursor: pointer; }
+    #counter { font-weight: bold; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Click Targets</h1>
+  <div id="counter">0</div>
+  <div id="buttons">
+    <button id="btn-0" class="click-target">Button 0</button>
+    <button id="btn-1" class="click-target">Button 1</button>
+    <button id="btn-2" class="click-target">Button 2</button>
+    <button id="btn-3" class="click-target">Button 3</button>
+    <button id="btn-4" class="click-target">Button 4</button>
+    <button id="btn-5" class="click-target">Button 5</button>
+    <button id="btn-6" class="click-target">Button 6</button>
+    <button id="btn-7" class="click-target">Button 7</button>
+    <button id="btn-8" class="click-target">Button 8</button>
+    <button id="btn-9" class="click-target">Button 9</button>
+  </div>
+  <script>
+    let count = 0;
+    const counterEl = document.getElementById('counter');
+    document.getElementById('buttons').addEventListener('click', (e) => {
+      if (e.target instanceof HTMLButtonElement) {
+        count++;
+        counterEl.textContent = String(count);
+      }
+    });
+  </script>
+</body>
+</html>

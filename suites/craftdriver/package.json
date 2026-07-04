@@ -1,0 +1,17 @@
+{
+  "name": "perf-suite-craftdriver",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "bench": "vitest run --config vitest.config.ts",
+    "bench:optimized": "vitest run --config vitest.config.optimized.ts",
+    "bench:zero-config": "vitest run --config vitest.config.zero-config.ts"
+  },
+  "dependencies": {
+    "craftdriver": "file:../../../craftdriver"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
+  }
+}

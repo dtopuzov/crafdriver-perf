@@ -1,0 +1,63 @@
+{
+  "tenant": "acme-retail-global",
+  "release": "2026.07.05-heavy-network-fixture",
+  "featureFlags": {
+    "smartSearch": true,
+    "recommendations": true,
+    "inventoryReservations": true,
+    "pricingExperiments": true,
+    "sessionReplay": false,
+    "checkoutRecovery": true,
+    "warehouseRouting": true,
+    "personalizedNavigation": true
+  },
+  "segments": [
+    "returning",
+    "high-intent",
+    "desktop",
+    "weekday-evening",
+    "experiment-b",
+    "loyalty-gold"
+  ],
+  "metrics": [
+    { "key": "grossRevenue", "label": "Gross revenue", "value": 12844023, "trend": 0.083 },
+    { "key": "orders", "label": "Orders", "value": 46211, "trend": 0.041 },
+    { "key": "conversion", "label": "Conversion", "value": 0.073, "trend": 0.009 },
+    { "key": "inventoryRisk", "label": "Inventory risk", "value": 181, "trend": -0.021 },
+    { "key": "supportQueue", "label": "Support queue", "value": 932, "trend": 0.016 },
+    { "key": "latencyP95", "label": "API latency p95", "value": 384, "trend": -0.032 }
+  ],
+  "navigation": [
+    "Overview",
+    "Revenue",
+    "Orders",
+    "Customers",
+    "Inventory",
+    "Forecasts",
+    "Fulfillment",
+    "Risk",
+    "Experiments",
+    "Support",
+    "Settings"
+  ],
+  "recommendations": [
+    { "sku": "SKU-10021", "name": "Modular workstation", "score": 0.982, "margin": 0.42 },
+    { "sku": "SKU-10088", "name": "Noise-control panel", "score": 0.971, "margin": 0.36 },
+    { "sku": "SKU-10104", "name": "Ergonomic task light", "score": 0.957, "margin": 0.33 },
+    { "sku": "SKU-10217", "name": "Adjustable monitor arm", "score": 0.944, "margin": 0.39 },
+    { "sku": "SKU-10302", "name": "Cable routing kit", "score": 0.933, "margin": 0.51 },
+    { "sku": "SKU-10441", "name": "Focus-room display", "score": 0.917, "margin": 0.29 }
+  ],
+  "inventory": [
+    { "warehouse": "ATL-2", "available": 18420, "reserved": 1732, "backordered": 121 },
+    { "warehouse": "DAL-1", "available": 22810, "reserved": 2410, "backordered": 77 },
+    { "warehouse": "LAX-4", "available": 16730, "reserved": 1928, "backordered": 209 },
+    { "warehouse": "EWR-3", "available": 20981, "reserved": 2212, "backordered": 96 },
+    { "warehouse": "SEA-1", "available": 14328, "reserved": 1304, "backordered": 143 }
+  ],
+  "copyBlocks": [
+    "Production applications rarely wait on one clean API. They often fan out into feature flags, session state, menus, recommendations, pricing, telemetry, experiment metadata, and incremental route data before the useful UI appears.",
+    "This payload is intentionally ordinary business data repeated across many cache-busted requests. The cost being exercised by the benchmark is browser automation waiting through the page's last visible-ready network dependency.",
+    "The static fixture keeps external services, internet speed, account state, and CDN behavior out of the measurement while still producing real HTTP traffic inside the browser."
+  ]
+}

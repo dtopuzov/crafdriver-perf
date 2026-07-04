@@ -1,0 +1,16 @@
+{
+  "name": "perf-suite-kendo-e2e",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "bench": "vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "@progress/kendo-e2e": "^5.0.5",
+    "selenium-webdriver": "^4.45.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
+  }
+}
