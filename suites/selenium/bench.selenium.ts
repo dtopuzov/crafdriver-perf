@@ -170,8 +170,16 @@ describe('selenium-webdriver competitive benchmark', () => {
         async () => {
           const [elapsed] = await timed(async () => {
             await driver.get(`${BASE_URL}/login.html`);
-            await driver.findElement(By.css('#username')).sendKeys('perfuser');
-            await driver.findElement(By.css('#password')).sendKeys('secret');
+            // clear() first so the measured work matches the clear-then-type
+            // the fill idioms do (craftdriver fill, kendo type, wdio setValue
+            // all clear before typing). Locate once, then clear + sendKeys on
+            // the same element, mirroring craftdriver's fill.
+            const usernameEl = await driver.findElement(By.css('#username'));
+            await usernameEl.clear();
+            await usernameEl.sendKeys('perfuser');
+            const passwordEl = await driver.findElement(By.css('#password'));
+            await passwordEl.clear();
+            await passwordEl.sendKeys('secret');
             await driver.findElement(By.css('#submit')).click();
             // #welcome doesn't exist in the DOM until it's injected, so wait
             // for it to appear before checking visibility (elementIsVisible

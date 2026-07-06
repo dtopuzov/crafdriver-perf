@@ -12,6 +12,7 @@
     "bench:craftdriver": "npm run bench --workspace=suites/craftdriver",
     "bench:craftdriver:optimized": "npm run bench:optimized --workspace=suites/craftdriver",
     "bench:craftdriver:zero-config": "npm run bench:zero-config --workspace=suites/craftdriver",
+    "bench:logs-default": "npm run bench:logs-default --workspace=suites/craftdriver",
     "bench:selenium": "npm run bench --workspace=suites/selenium",
     "bench:wdio": "npm run bench --workspace=suites/wdio",
     "bench:playwright": "npm run bench --workspace=suites/playwright",

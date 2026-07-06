@@ -184,8 +184,12 @@ describe('playwright competitive benchmark', () => {
             // pressSequentially (real per-char key events), not fill() — fill
             // is a DOM value-set that skips keydown/keyup, unlike the other
             // libraries' fill idioms (sendKeys/setValue/type), so it wouldn't
-            // be measuring the same work.
+            // be measuring the same work. clear() first so the measured work
+            // matches the clear-then-type the fill idioms do (craftdriver
+            // fill, kendo type, wdio setValue all clear before typing).
+            await session.page.locator('#username').clear();
             await session.page.locator('#username').pressSequentially('perfuser');
+            await session.page.locator('#password').clear();
             await session.page.locator('#password').pressSequentially('secret');
             await session.page.locator('#submit').click();
             await session.page.locator('#welcome').waitFor({ state: 'visible' });
